@@ -40,6 +40,16 @@ component "pet" {
   inputs = {
     length    = var.length
     separator = var.separator
+    clusters = {
+      cluster1 = {
+        version = "1.33.5"
+        id      = "/subscriptions/.../aks1"
+      }
+      cluster2 = {
+        version = "1.32.1"
+        id      = "/subscriptions/.../aks2"
+      }
+    }
   }
 
   providers = {
