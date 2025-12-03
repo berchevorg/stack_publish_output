@@ -7,6 +7,14 @@ terraform {
   }
 }
 
+variable "clusters" {
+  description = "Map of Kubernetes clusters"
+  type = map(object({
+    version = string
+    id      = string
+  }))
+}
+
 
 variable "length" {
   type = string
