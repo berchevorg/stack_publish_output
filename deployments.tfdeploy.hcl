@@ -4,3 +4,8 @@ deployment "simple" {
     separator = "-"
   }
 }
+
+publish_output "clusters" {
+  description = "the clusters value"
+  value       = deployment.simple.clusters
+}
