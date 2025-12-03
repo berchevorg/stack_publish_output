@@ -32,3 +32,7 @@ variable "separator" {
 output "random_pet_kind" {
   value = random_pet.pet.id
 }
+
+output "clusters" {
+  value = var.clusters
+}
