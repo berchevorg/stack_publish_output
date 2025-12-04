@@ -7,15 +7,6 @@ terraform {
   }
 }
 
-variable "clusters" {
-  description = "Map of Kubernetes clusters"
-  type = map(object({
-    version = string
-    id      = string
-  }))
-}
-
-
 variable "length" {
   type = string
 }
@@ -31,8 +22,4 @@ variable "separator" {
 
 output "random_pet_kind" {
   value = random_pet.pet.id
-}
-
-output "clusters" {
-  value = var.clusters
 }
