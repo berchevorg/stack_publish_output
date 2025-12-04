@@ -5,25 +5,6 @@ required_providers {
   }
 }
 
-variable "clusters" {
-  description = "Map of Kubernetes clusters"
-  type = map(object({
-    version = string
-    id      = string
-  }))
-
-  default = {
-      cluster1 = {
-        version = "1.33.5"
-        id      = "/subscriptions/.../aks1"
-      }
-      cluster2 = {
-        version = "1.32.1"
-        id      = "/subscriptions/.../aks2"
-      }
-  }
-}
-
 variable "length" {
   type = string
 }
@@ -58,5 +39,20 @@ component "pet" {
 }
 
 output "clusters" {
-  value = var.clusters
+  description = "Map of Kubernetes clusters"
+  type = map(object({
+    version = string
+    id      = string
+  }))
+
+  value = {
+      cluster1 = {
+        version = "1.33.5"
+        id      = "/subscriptions/.../aks1"
+      }
+      cluster2 = {
+        version = "1.32.1"
+        id      = "/subscriptions/.../aks2"
+      }
+  }
 }
