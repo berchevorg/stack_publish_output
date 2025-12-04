@@ -56,3 +56,7 @@ component "pet" {
     random = provider.random.this
   }
 }
+
+output "clusters" {
+  value = var.clusters
+}
